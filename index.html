@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="FreeMiniTools - Free Online Tools | Word Counter, Image Compressor, PDF Merge & QR Generator">
+    <meta name="description" content="FreeMiniTools provides free online tools including Word Counter, Image Compressor, Case Converter, QR Code Generator, and PDF Merge Tool. Fast, secure and easy-to-use web utilities.">
+    <meta name="keywords" content="free online tools, online utility tools, free web tools, mini tools website, word counter online free, character counter tool, compress image online free, reduce image size without losing quality, merge pdf online free, pdf tools free online">
+    <title>FreeMiniTools - Free Online Tools | Word Counter, Image Compressor, PDF Merge & QR Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">FreeMiniTools</div>
+        <ul class="nav-links">
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>FreeMiniTools - Free Online Utility Tools for Everyday Tasks</h1>
+        <p>Access powerful browser-based tools like Word Counter, Image Compressor, QR Generator, and more — no installation required.</p>
+        <a href="#tools" class="primary-btn">Explore Tools</a>
+    </header>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section">
+        <h2>Our Free Online Tools</h2>
+        <div class="tools-grid">
+            
+            <div class="tool-card" data-tool="word">
+                <img src="assets/icon-word.png" alt="Word counter online free icon">
+                <h3>Word Counter Tool</h3>
+                <p>Count Words and Characters Instantly</p>
+            </div>
+
+            <div class="tool-card" data-tool="image">
+                <img src="assets/icon-image.png" alt="Compress image online free icon">
+                <h3>Image Compressor Tool</h3>
+                <p>Compress Images Without Losing Quality</p>
+            </div>
+
+            <div class="tool-card" data-tool="case">
+                <img src="assets/icon-case.png" alt="Convert text case online free icon">
+                <h3>Case Converter Tool</h3>
+                <p>Convert Text Case in One Click</p>
+            </div>
+
+            <div class="tool-card" data-tool="qr">
+                <img src="assets/icon-qr.png" alt="Generate QR code online free icon">
+                <h3>QR Code Generator</h3>
+                <p>Create QR Codes Online for Free</p>
+            </div>
+
+            <div class="tool-card" data-tool="pdf">
+                <img src="assets/icon-pdf.png" alt="Merge PDF online free icon">
+                <h3>PDF Merge Tool</h3>
+                <p>Merge PDF Files Quickly and Securely</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tool Containers -->
+    <section id="tool-area" class="tool-area">
+        <div id="wordTool" class="tool hidden">
+            <h2>Word Counter Tool</h2>
+            <textarea id="wordInput" placeholder="Type or paste your text here..."></textarea>
+            <div class="counter-container">
+                <p>Words: <span id="wordCount">0</span></p>
+                <p>Characters: <span id="charCount">0</span></p>
+                <p>Sentences: <span id="sentenceCount">0</span></p>
+            </div>
+            <button id="clearText">Clear</button>
+        </div>
+
+        <div id="imageTool" class="tool hidden">
+            <h2>Image Compressor Tool</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <canvas id="canvas" class="hidden"></canvas>
+            <div id="compressInfo"></div>
+            <button id="downloadCompressed" class="hidden">Download Compressed Image</button>
+        </div>
+
+        <div id="caseTool" class="tool hidden">
+            <h2>Case Converter Tool</h2>
+            <textarea id="caseInput" placeholder="Enter your text..."></textarea>
+            <div class="case-buttons">
+                <button onclick="convertCase('upper')">UPPERCASE</button>
+                <button onclick="convertCase('lower')">lowercase</button>
+                <button onclick="convertCase('sentence')">Sentence case</button>
+                <button onclick="convertCase('capitalized')">Capitalize Each Word</button>
+            </div>
+        </div>
+
+        <div id="qrTool" class="tool hidden">
+            <h2>QR Code Generator</h2>
+            <input type="text" id="qrText" placeholder="Enter text or URL">
+            <button id="generateQR">Generate QR Code</button>
+            <div id="qrResult"></div>
+            <button id="downloadQR" class="hidden">Download QR</button>
+        </div>
+
+        <div id="pdfTool" class="tool hidden">
+            <h2>PDF Merge Tool</h2>
+            <input type="file" id="pdfInput" accept="application/pdf" multiple>
+            <button id="mergePDF">Merge PDFs</button>
+            <a id="downloadPDF" class="hidden" download="merged.pdf">Download Merged PDF</a>
+        </div>
+    </section>
+
+    <!-- About Section (SEO content) -->
+    <section id="about" class="about-section">
+        <h2>Why Use FreeMiniTools?</h2>
+        <p>FreeMiniTools is your go-to platform for everyday browser utilities. It’s fast, secure, and completely free — no sign-up required. With tools like the Word Counter, PDF Merger, and QR Generator, you can boost productivity without installing any software. All processing happens on your device, ensuring your data stays private.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FreeMiniTools. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrjs2/qrjs2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
